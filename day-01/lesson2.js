@@ -45,3 +45,51 @@ if (marks >= 90) {
     console.log("Fail");
 }
 
+const user = "Sameer";
+const pass = "12345";
+
+if (user === "Sameer") {
+    if (pass === "12345") {
+        console.log("Succesful login");
+    } else {
+        console.log("Incorrect password");
+    }
+} else {
+    console.log("User not Found");
+} 
+
+// === TERNARY CONDITION ===
+
+// syntax Ternary: condition ? valueIfTrue : valueIfFalse;
+
+const result = age >= 18 ? "Adult" : "Kid";
+
+// === LOOPS ====
+for (let i = 0; i < 5; i++) {
+    console.log(i);  // initialization, condition, increment
+}
+
+let i = 0;
+
+while (i < 5) {
+    console.log(i);
+    i++;
+}
+
+// UNIVERSITY LOGIC 
+const students = 5;
+
+let totalmarks = 0;
+
+for ( i = 0; i <= students ; i++) {
+    let marks = i * 15;
+
+    totalmarks += marks;
+
+    if (marks >= 75) {
+        console.log(` student ${i} : Pass`);
+    } else {
+        console.log(`Student ${i} : Fail`);
+    }
+}  
+console.log(` totalmarks : ${totalmarks}`);
