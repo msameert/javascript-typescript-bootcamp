@@ -15,6 +15,8 @@ try {
 
 
 // === async, await for promises handling ====
+//• JavaScript is built for web browsers where the screen cannot freeze, so it is async by default and needs async/await to pause.
+//• Python is built for data and scripting, so it freezes and waits by default. You only use async/await in Python if you are building high-performance systems that need to do a million things at once.
 // In coding, a Promise is just a placeholder token for data that takes a little bit of time to arrive (like downloading a picture or fetching user data from the internet).
 async function getUsers() {   // • async : When you put async in front of a function, you are telling the computer: "Hey, inside this room, things are going to take some time. We are baking here!"
 
@@ -59,3 +61,57 @@ async function getUsers() {
 }
 
 getUsers();
+
+// POST method ====
+async function registerStudent() {
+
+    const student = {
+        name: "Sameer",
+        department: "Software Engineering",
+        cgpa: 3.4
+    };
+
+    try {
+
+        const response = await fetch(
+            "https://jsonplaceholder.typicode.com/users",
+            {
+                method: "POST",
+
+                headers: {
+                    "Content-Type": "application/json"
+                },
+
+                body: JSON.stringify(student)
+            }
+        );
+
+        if (!response.ok) {
+            throw new Error("Registration failed");
+        }
+
+        const result = await response.json();
+
+        console.log("Registered:", result);
+
+    } catch (error) {
+
+        console.log(error.message);
+
+    }
+
+}
+
+registerStudent();
+
+// === fetching backend in JS - applied await at every function it moves one by one
+const student = await getStudent();
+const grades = await getGrades();
+const attendance = await getAttendance();
+
+// the professional way - it fetches all at same time instead of waiting one by one
+const [students, gradess, attendancee] = await Promise.all([
+    getStudent(),
+    getGrades(),
+    getAttendance()
+]);
