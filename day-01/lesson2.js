@@ -93,3 +93,25 @@ for ( i = 0; i <= students ; i++) {
     }
 }  
 console.log(` totalmarks : ${totalmarks}`);
+
+// === UNIVERSITY GRADING SYSTEM =====
+let markss = 67;
+
+if (markss >= 85) {
+    console.log("Grade A");
+} else if (markss >= 70 && markss <= 84) {
+    console.log("Grade B");
+} else if (markss >= 65 && markss <= 69) {
+    console.log("Grade C");
+} else if (markss >= 45 && markss <= 64) {
+    console.log("Grade D")
+} else {
+    console.log("Fails")
+}
+
+// table of 7
+
+for (i = 1; i <= 10; i++){
+    const j = 7;
+    console.log(`${j}*${i} = ${j*i}`);
+}
