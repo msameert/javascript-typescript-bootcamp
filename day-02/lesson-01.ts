@@ -29,3 +29,10 @@ student = {
     age: 21,
     cgpa: 3.4
 };
+
+let studentId: number | string = 101;
+
+studentId = "STU-101"; // Allowed
+
+studentId = 101; // Allowed
+//The | symbol means OR.
