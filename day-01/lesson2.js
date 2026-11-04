@@ -115,3 +115,5 @@ for (i = 1; i <= 10; i++){
     const j = 7;
     console.log(`${j}*${i} = ${j*i}`);
 }
+
+const array = [6,5,4,7,8];
