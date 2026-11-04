@@ -145,3 +145,5 @@ studentz.forEach(student => {
 
 console.log("Passed Students:", passed);
 console.log("Average Marks:", average);
+
+
