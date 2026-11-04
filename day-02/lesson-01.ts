@@ -36,3 +36,26 @@ studentId = "STU-101"; // Allowed
 
 studentId = 101; // Allowed
 //The | symbol means OR.
+
+// ===Functions ===
+// syntax :
+
+//    function functionName(): returnType {
+//    code...
+//    }
+
+function calculateTotal(price: number, quantity: number): number {    //this :number is returntype that returns number
+
+    return price * quantity;
+
+}
+// Optional parameters
+// What if a function doesn't always need every parameter?
+
+function studentss(name: string, age: number, dep?: string): void {
+    if (dep) {
+        console.log(`Hello ${name} from ${dep}`);
+    } else {
+        console.log(`Hello ${name}`);
+    }
+};
