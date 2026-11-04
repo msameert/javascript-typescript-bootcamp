@@ -73,3 +73,75 @@ const a = {
 // access properties 
 console.log(a.name);
 
+// dictionaries in array
+const studentss = [
+    {
+        id: 1,
+        name: "Ali",
+        marks: 85
+    },
+    {
+        id: 2,
+        name: "Ahmed",
+        marks: 45
+    },
+    {
+        id: 3,
+        name: "Sameer",
+        marks: 92
+    }
+];
+
+// access individual record
+
+console.log(students[0].name);
+
+// get all student names
+studentss.forEach(student => {
+    console.log(student.name);
+});
+
+// Destructuring lets you extract values from arrays or objects into variables.
+const { name, age, cgpa } = studentss[0];
+
+console.log(name);
+console.log(age);
+console.log(cgpa);
+
+// Rest parameters (...args)
+function calculateTotal(...numbers) {
+
+    return numbers.reduce((total, num) => total + num, 0);
+
+}
+
+console.log(calculateTotal(10, 20, 30));
+console.log(calculateTotal(5, 10, 15, 20, 40));
+
+// summing up 
+const studentz = [
+    { name: "Ali", marks: 85 },
+    { name: "Ahmed", marks: 45 },
+    { name: "Sameer", marks: 92 },
+    { name: "Usman", marks: 67 }
+];
+
+// Get passed students
+const passsed = studentz.filter(student => student.marks >= 50);
+
+// Calculate average
+const total = studentz.reduce((sum, student) => {
+    return sum + student.marks;
+}, 0);
+
+const average = total / studentz.length;
+
+// Display results
+console.log("All Students:");
+
+studentz.forEach(student => {
+    console.log(`${student.name}: ${student.marks}`);
+});
+
+console.log("Passed Students:", passed);
+console.log("Average Marks:", average);
