@@ -69,3 +69,71 @@ const studentsResponse: ApiResponse<Student[]> = {
 
     message: "Students fetched successfully"
 };
+
+// ====== CLASSES =====
+class Students {
+
+    constructor(                  //initiaizing properties of class
+        public id: number,
+        public name: string,       // public is access modifier
+        public marks: number
+    ) {}
+
+    calculateGrade(): string {        // methods 
+
+        if (this.marks >= 80) {
+            return "A";
+        }
+
+        if (this.marks >= 60) {
+            return "B";
+        }
+
+        if (this.marks >= 50) {
+            return "C";
+        }
+
+        return "Fail";
+
+    }
+
+}
+
+const student1 = new Students(1, "Ali", 85);    // creating object
+
+console.log(student1.calculateGrade());
+
+//  === inheritance ===  
+
+// parent class
+class User {
+
+    constructor(
+        public id: number,
+        public name: string,
+        public email: string
+    ) {}
+
+    displayInfo(): void {
+
+        console.log(this.name);
+        console.log(this.email);
+
+    }
+
+}
+// now child class 
+class Student extends User {   // inheriting using 'extends'
+
+    constructor(
+        id: number,
+        name: string,
+        email: string,
+        public cgpa: number
+    ) {
+
+        super(id, name, email);
+
+    }
+
+}
