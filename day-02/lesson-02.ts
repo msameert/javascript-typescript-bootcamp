@@ -123,7 +123,7 @@ class User {
 
 }
 // now child class 
-class Student extends User {   // inheriting using 'extends'
+class Studentss extends User {   // inheriting using 'extends'
 
     constructor(
         id: number,
